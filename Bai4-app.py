@@ -78,12 +78,6 @@ st.dataframe(df[['Tên', 'Cluster']], use_container_width=True)
 # 5. Scatter plot - KHÔNG dùng seaborn
 st.subheader("🎨 Biểu đồ phân cụm")
 
-col_x = st.selectbox("Trục X:", numeric_cols, index=0)
-col_y = st.selectbox("Trục Y:", numeric_cols, index=1)
-
-x_idx = numeric_cols.index(col_x)
-st.subheader("🎨 Biểu đồ phân cụm")
-
 col_x = st.selectbox("Trục X:", numeric_cols, index=0, key='x_axis')
 col_y = st.selectbox("Trục Y:", numeric_cols, index=1, key='y_axis')
 
