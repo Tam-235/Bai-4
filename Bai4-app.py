@@ -163,4 +163,3 @@ cluster_means = df.groupby('Cluster')[numeric_cols].mean().round(1)
 
 st.dataframe(cluster_means, use_container_width=True)
 
-st.success("✅ Hoàn thành phân cụm hội viên bể bơi.")
