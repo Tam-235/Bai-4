@@ -141,4 +141,4 @@ st.subheader("📊 Thống kê trung bình theo cụm")
 cluster_means = df.groupby('Cluster')[numeric_cols].mean().round(1)
 st.dataframe(cluster_means, use_container_width=True)
 
-st.success("✅ Báo cáo hoàn chỉnh! Dựa trên file PDF của bạn.")  # [file:1]
+
