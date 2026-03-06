@@ -134,34 +134,7 @@ ax2.legend()
 ax2.grid(True, alpha=0.3)
 plt.tight_layout()
 st.pyplot(fig2)
-ax2.scatter(
-    centers[:, x_idx], 
-    centers[:, y_idx],
-    marker='X', 
-    s=300, 
-    c='black', 
-    linewidth=3, 
-    label='Tâm cụm'
-)
 
-# Ghi nhãn tên
-for i, name in enumerate(df['Tên']):
-    ax2.annotate(
-        name, 
-        (df_scaled.iloc[i, x_idx], df_scaled.iloc[i, y_idx]),
-        xytext=(3, 3), 
-        textcoords='offset points',
-        fontsize=10, 
-        ha='left'
-    )
-
-ax2.set_title(f"Phân cụm K-Means (k={chosen_k})")
-ax2.set_xlabel(f'Scaled {col_x}')
-ax2.set_ylabel(f'Scaled {col_y}')
-ax2.legend()
-ax2.grid(True, alpha=0.3)
-plt.tight_layout()
-st.pyplot(fig2)
 
 # 6. Thống kê
 st.subheader("📊 Thống kê trung bình theo cụm")
