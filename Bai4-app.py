@@ -9,27 +9,40 @@ st.set_page_config(page_title="Báo cáo phân cụm hội viên bể bơi", lay
 st.markdown("""
 <style>
 
-/* header bảng */
-[data-testid="stDataFrame"] thead tr th {
-    background-color: #1f6b75;
-    color: white;
-    font-weight: bold;
-    text-align: center;
+/* bảng đầu */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size:16px;
 }
 
-/* hàng chẵn */
-[data-testid="stDataFrame"] tbody tr:nth-child(even) {
-    background-color: #d9e6ea;
+/* header */
+thead tr th {
+    background-color:#1f6b75;
+    color:white;
+    font-weight:bold;
+    text-align:center;
 }
 
 /* hàng lẻ */
-[data-testid="stDataFrame"] tbody tr:nth-child(odd) {
-    background-color: #bcd3d9;
+tbody tr:nth-child(odd) {
+    background-color:#bcd3d9;
 }
 
-/* chữ trong bảng */
-[data-testid="stDataFrame"] {
-    font-size: 16px;
+/* hàng chẵn */
+tbody tr:nth-child(even) {
+    background-color:#d9e6ea;
+}
+
+/* border */
+td, th {
+    border:1px solid #c0c0c0;
+    padding:6px;
+}
+
+/* cột tên đậm */
+tbody tr td:first-child {
+    font-weight:bold;
 }
 
 </style>
@@ -84,7 +97,7 @@ def load_data():
 df = load_data()
 
 st.subheader("📋 Dữ liệu hội viên")
-st.dataframe(df, use_container_width=True)
+st.table(df)
 
 # =========================
 # 2. Chuẩn hóa dữ liệu
