@@ -26,11 +26,8 @@ chosen_k = st.sidebar.slider("Chọn số cụm (k)", 2, 8, 3)
 
 st.sidebar.markdown("---")
 
-st.sidebar.subheader("📌 Gợi ý từ đề bài")
-st.sidebar.write("**k = 3** (Elbow Method)")
-st.sidebar.write("Cụm 0: Chuyên nghiệp")
-st.sidebar.write("Cụm 1: Người mới")
-st.sidebar.write("Cụm 2: Trung bình")
+st.sidebar.subheader("Từ yêu cầu đề bài:")
+st.sidebar.write("random_state=42, n_init=10")
 
 # =========================
 # 1. Dữ liệu
@@ -170,3 +167,33 @@ cluster_means = df.groupby('Cluster')[numeric_cols].mean().round(1)
 
 st.dataframe(cluster_means, use_container_width=True)
 
+st.subheader("🧠 Diễn giải kết quả phân cụm")
+
+st.markdown("""
+**Cụm 0 – Người bơi chuyên nghiệp**
+
+- Số buổi bơi/tuần cao  
+- Thời gian bơi dài  
+- Tham gia nhiều lớp huấn luyện  
+
+➡ Đây là nhóm hội viên có mức độ luyện tập cao và thường xuyên.
+
+---
+
+**Cụm 1 – Người mới**
+
+- Số buổi bơi ít  
+- Thời gian bơi ngắn  
+- Ít hoặc không tham gia lớp học  
+
+➡ Đây là nhóm hội viên mới bắt đầu hoặc bơi giải trí.
+
+---
+
+**Cụm 2 – Nhóm trung bình**
+
+- Tần suất bơi và thời gian ở mức trung bình  
+- Có tham gia một số lớp học  
+
+➡ Đây là nhóm hội viên bơi khá thường xuyên nhưng chưa ở mức chuyên nghiệp.
+""")
