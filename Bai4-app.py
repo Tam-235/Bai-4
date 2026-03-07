@@ -13,7 +13,14 @@ st.title("📊 Báo cáo phân cụm hội viên bể bơi")
 # Sidebar
 # =========================
 
-st.sidebar.header("⚙️ Thiết lập phân cụm")
+st.sidebar.header("Trường ĐH Công nghệ Kỹ thuật TP.HCM")
+st.sidebar.subheader("Môn học: BIG DATA")
+st.sidebar.write("Giảng viên: TS. Hồ Nhựt Minh")
+st.sidebar.write("Sinh viên: Nguyễn Thị Xuân Tâm - 23126036")
+
+st.sidebar.markdown("---")
+
+st.sidebar.subheader("⚙️ Thiết lập phân cụm")
 
 chosen_k = st.sidebar.slider("Chọn số cụm (k)", 2, 8, 3)
 
