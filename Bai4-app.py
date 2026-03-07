@@ -6,6 +6,34 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 
 st.set_page_config(page_title="Báo cáo phân cụm hội viên bể bơi", layout="wide")
+st.markdown("""
+<style>
+
+/* header bảng */
+[data-testid="stDataFrame"] thead tr th {
+    background-color: #1f6b75;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* hàng chẵn */
+[data-testid="stDataFrame"] tbody tr:nth-child(even) {
+    background-color: #d9e6ea;
+}
+
+/* hàng lẻ */
+[data-testid="stDataFrame"] tbody tr:nth-child(odd) {
+    background-color: #bcd3d9;
+}
+
+/* chữ trong bảng */
+[data-testid="stDataFrame"] {
+    font-size: 16px;
+}
+
+</style>
+""", unsafe_allow_html=True)
 
 st.title("📊 Báo cáo phân cụm hội viên bể bơi")
 
@@ -13,7 +41,14 @@ st.title("📊 Báo cáo phân cụm hội viên bể bơi")
 # Sidebar
 # =========================
 
-st.sidebar.header("Trường ĐH Công nghệ Kỹ thuật TP.HCM")
+st.sidebar.markdown(
+"""
+<p style='font-size:22px; color:#000000; font-weight:bold;'>
+Trường ĐH Công nghệ Kỹ thuật TP.HCM
+</p>
+""",
+unsafe_allow_html=True
+)
 st.sidebar.subheader("Môn học: BIG DATA")
 st.sidebar.write("Giảng viên: TS. Hồ Nhựt Minh")
 st.sidebar.write("Sinh viên: Nguyễn Thị Xuân Tâm - 23126036")
