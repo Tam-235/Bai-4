@@ -20,7 +20,7 @@ table {
 thead tr th {
     background-color:#669999 !important;
     color:#ffffff !important;
-    font-weight:bold;
+    font-weight:bold !important;
     text-align:center;
 }
 
