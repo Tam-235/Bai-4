@@ -18,7 +18,7 @@ table {
 
 /* header */
 thead tr th {
-    background-color:#1f6b75;
+    background-color:#66CC99;
     color:white;
     font-weight:bold;
     text-align:center;
