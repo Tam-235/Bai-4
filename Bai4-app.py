@@ -18,8 +18,8 @@ table {
 
 /* header */
 thead tr th {
-    background-color:#669999;
-    color:#ffffff;
+    background-color:#669999 !important;
+    color:#ffffff !important;
     font-weight:bold;
     text-align:center;
 }
