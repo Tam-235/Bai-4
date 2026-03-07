@@ -20,14 +20,16 @@ st.sidebar.write("Sinh viên: Nguyễn Thị Xuân Tâm - 23126036")
 
 st.sidebar.markdown("---")
 
+st.sidebar.subheader("Từ yêu cầu đề bài:")
+st.sidebar.write("random_state=42, n_init=10")
+
 st.sidebar.subheader("⚙️ Thiết lập phân cụm")
 
 chosen_k = st.sidebar.slider("Chọn số cụm (k)", 2, 8, 3)
 
 st.sidebar.markdown("---")
 
-st.sidebar.subheader("Từ yêu cầu đề bài:")
-st.sidebar.write("random_state=42, n_init=10")
+
 
 # =========================
 # 1. Dữ liệu
