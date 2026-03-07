@@ -6,42 +6,37 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 
 st.set_page_config(page_title="Báo cáo phân cụm hội viên bể bơi", layout="wide")
+
 st.markdown("""
 <style>
 
-/* bảng đầu */
-table {
-    border-collapse: collapse;
-    width: 100%;
-    font-size:16px;
-}
-
-/* header */
-thead tr th {
+/* header dataframe */
+[data-testid="stDataFrame"] thead th {
     background-color:#669999 !important;
-    color:#ffffff !important;
-    font-weight:bold !important;
-    text-align:center;
+    color:white !important;
+    font-weight:700 !important;
+    text-align:center !important;
 }
 
 /* hàng lẻ */
-tbody tr:nth-child(odd) {
+[data-testid="stDataFrame"] tbody tr:nth-child(odd) {
     background-color:#bcd3d9;
 }
 
 /* hàng chẵn */
-tbody tr:nth-child(even) {
+[data-testid="stDataFrame"] tbody tr:nth-child(even) {
     background-color:#ffffff;
 }
 
 /* border */
-td, th {
+[data-testid="stDataFrame"] td,
+[data-testid="stDataFrame"] th {
     border:1px solid #c0c0c0;
     padding:6px;
 }
 
-/* cột tên đậm */
-tbody tr td:first-child {
+/* cột đầu đậm */
+[data-testid="stDataFrame"] tbody tr td:first-child {
     font-weight:bold;
 }
 
@@ -62,6 +57,7 @@ Trường ĐH Công nghệ Kỹ thuật TP.HCM
 """,
 unsafe_allow_html=True
 )
+
 st.sidebar.subheader("Môn học: BIG DATA")
 st.sidebar.write("Giảng viên: TS. Hồ Nhựt Minh")
 st.sidebar.write("Sinh viên: Nguyễn Thị Xuân Tâm - 23126036")
@@ -76,8 +72,6 @@ st.sidebar.subheader("⚙️ Thiết lập phân cụm")
 chosen_k = st.sidebar.slider("Chọn số cụm (k)", 2, 8, 3)
 
 st.sidebar.markdown("---")
-
-
 
 # =========================
 # 1. Dữ liệu
@@ -97,7 +91,8 @@ def load_data():
 df = load_data()
 
 st.subheader("📋 Dữ liệu hội viên")
-st.table(df)
+
+st.dataframe(df, use_container_width=True)
 
 # =========================
 # 2. Chuẩn hóa dữ liệu
