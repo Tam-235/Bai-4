@@ -31,7 +31,7 @@ tbody tr:nth-child(odd) {
 
 /* hàng chẵn */
 tbody tr:nth-child(even) {
-    background-color:#d9e6ea;
+    background-color:#ffffff;
 }
 
 /* border */
